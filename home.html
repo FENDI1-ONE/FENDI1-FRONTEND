@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>FENDI1 Merch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page">
+<style id="debug-media">
+  /* Quick debug: falls das nicht wirkt, ist CSS-Laden oder Media-Query broken */
+  @media (max-width: 768px) {
+    body { outline: 6px solid lime !important; } /* sichtbarer Debug-Rahmen */
+  }
+</style>
+
+<script>
+  console.log("DEBUG: window.innerWidth =", window.innerWidth);
+  console.log("DEBUG: matchMedia('(max-width:768px)').matches =", window.matchMedia('(max-width:768px)').matches);
+  // show sheet content existence
+  const link = document.querySelector('link[rel="stylesheet"][href="style.css"]');
+  console.log("DEBUG: style.css link found:", !!link, link ? link.href : null);
+</script>
+
+    <header>
+        <div class="logo">FENDI1</div>
+        <nav id = "nav">
+            <a href="ccl.html">CCL Collection</a>
+            <a href="love&drugs.html">L&D Collection</a>
+            <a href="sticker.html">Sticker</a>
+            <a href="legalNotice.html">Legal Notice </a>
+            <a href="cart.html" class="cart-link">
+            <div class="cart-wrapper">
+                <span class="cart-icon">
+                 🛒</span>
+                <span id="cart-count" class = "cart-count">0</span>
+            </div>
+            </a>
+        </nav>
+        <div class="burger" id="burger">
+           ☰ 
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>Minimalist FENDI1 Merch</h1>
+            <p>Streetwear. Out of touch. Spaced Out.</p>
+        </section>
+
+        <section id="hoodies" class="product-section">
+            <h2>"COULDN'T CARE LESS" Collection</h2>
+            <a href="ccl.html" class="product-card">
+                <img src="assets/cclShirtBlackFront&Back.png" alt="FENDI1 Shirt" class="shirts">
+                <h3>FENDI1 "Couldn't care less" Collection</h3>
+                <p>Minimalistic, premium quality design with FENDI1 attitude.</p>
+            </a>
+        </section>
+
+        <section id="shirts" class="product-section">
+            <h2>LOVE&DRUGS "IWEWMNK" Collection</h2>
+            <a href="love&drugs.html" class="product-card">
+                <img src="assets/love&drugsFront&Back.png" alt="LOVE&DRUGS Shirt" class="shirts">
+                <h3>FENDI1 LOVE&DRUGS Collection</h3>
+                <p>Clean & limited, matching the fan favourite mixtape.</p>
+            </a>
+        </section>
+
+        <section id="stickers" class="product-section">
+            <h2>Stickers</h2>
+            <a href="sticker.html" class="product-card">
+                <img src="assets/STICKERshiny.jpeg" alt="Sticker Design 1" class="sticker">
+                <h3>Sticker Pack #1</h3>
+                <p>Shiny Finish, Minimal Style</p>
+            </a>
+        </section>
+
+        <section id="about" class="product-section">
+            <a href="legalNotice.html" class="product-card">
+                <p>Legal Notice</p>
+            </a>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>&copy; 2026 FENDI1. ALL RIGHTS RESERVED.</p>
+    </footer>
+    <script>
+        const footer = document.getElementById('footer');
+
+        window.addEventListener('scroll',() => {
+            const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollTop = window.scrollY;
+
+            if (scrollTop >= scrollableHeight - 10) {
+                footer.classList.add('show');
+            }   else {
+                footer.classList.remove('show');
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const burger = document.getElementById("burger");
+            const nav = document.getElementById("nav");
+
+            burger.addEventListener("click", () => {
+                nav.classList.toggle("show");
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
