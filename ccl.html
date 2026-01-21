@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FENDI1 Merch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class= "ccl-page">
+    <header>
+        <div class="logo">"COULDN'T CARE LESS" Collection</div>
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="love&drugs.html">L&D Collection</a>
+            <a href="sticker.html">Sticker</a>
+            <a href="legalNotice.html">Legal Notice</a>
+            <a href="cart.html" class="cart-link">
+            <div class="cart-wrapper">
+                <span class="cart-icon">
+                    🛒</span>
+                    <span id="cart-count" class="cart-count">0</span>
+            </div>
+            </a>
+        </nav>
+        <div class="burger" id="burger">
+            ☰
+        </div>
+    </header>
+
+    <div class="back-button" onclick="history.back()">🡄Back</div>
+
+    <main>
+        <section id="hero">
+            <h1>FENDI1 "Couldn't Care Less" Collection</h1>
+            <p>Minimalistic, premium quality design with FENDI1 attitude.</p>
+        </section>
+
+        <section id="shirts" class="product-section">
+            <h2>"Couldn't Care Less" Shirt</h2>
+            <a href="ccl-shirt.html" class="product-card">
+                <img src="assets/cclShirtBlackFront&Back.png" alt="FENDI1 Shirt" class="shirts">
+                <h3>FENDI1 Shirt</h3>
+                <p>Black Shirt with minimalistic CCL design</p>
+            </a>
+        </section>
+
+        <section id="hoodies" class="product-section">
+            <h2>"Couldn't Care Less" Hoodie</h2>
+            <a href="ccl-hoodie.html" class="product-card">
+                <img src="assets/newhoodieBlackFrontLayDown.png" alt="FENDI1 Hoodie" class="hoodies">
+                <h3>FENDI1 Hoodie</h3>
+                <p>Black Hoodie with minimalistic CCL design</p>
+            </a>
+        </section>
+    </main>
+    <footer id="footer">
+        <p>&copy; 2026 FENDI1. ALL RIGHTS RESERVED.</p>
+    </footer>
+    <script>
+        const footer = document.getElementById('footer');
+
+        window.addEventListener('scroll',() => {
+            const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollTop = window.scrollY;
+
+            if (scrollTop >= scrollableHeight - 10) {
+                footer.classList.add('show');
+            }   else {
+                footer.classList.remove('show');
+            }
+        });
+    </script>
+     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const burger = document.getElementById("burger");
+            const nav = document.getElementById("header nav");
+
+            burger.addEventListener("click", () => {
+                nav.classList.toggle("show");
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+    <script src="hoodie-cart.js"></script>
+</body>
+</html>
