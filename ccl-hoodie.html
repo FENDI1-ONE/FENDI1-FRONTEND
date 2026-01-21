@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOODIES - FENDI1</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            background-color: #000;
+            color: #fff;
+            padding: 20px 40px;
+        }
+        footer {
+            background-color: #000;
+            color:#fff;
+            text-align:center;
+            padding: 1rem;
+        }
+        .product-page {
+            display: flex;
+            justify-content: center;
+            padding: 3rem;
+            gap: 3rem;
+        }
+        .product-gallery {
+            max-width: 400px;
+        }
+        .product-gallery img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            object-fit: cover;
+        }
+        .thumbnail-container {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .thumbnail-container img {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            border: 2px solid transparent;
+        }
+        .thumbnail-container img.active-thumb {
+            background-color: #f5f5f5;
+        }
+        .product-details {
+            max-width: 400px;
+        }
+        .product-details h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .product-infos {
+            max-width: 400px;
+        }
+        .product-infos h2 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .options {
+            margin-bottom: 1rem;
+        }
+        select {
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+        .color-box-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .color-box {
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .color-box.is-active {
+            border-color: #000;
+        }
+        .price {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+        button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body class="hoodie-page white-page">
+
+<header>
+    <div class="logo">"COULDN'T CARE LESS" HOODIE</div>
+    <nav id="nav">
+        <a href="index.html">Home</a>
+        <a href="love&drugs.html">L&D Collection</a>
+        <a href="sticker.html">Sticker</a>
+        <a href="legalNotice.html">Legal Notice</a>
+        <a href="cart.html" class="cart-link">
+            <div class="cart-wrapper">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-count" class="cart-count">0</span>
+            </div>
+        </a>
+    </nav>
+    <div class="burger" id="burger">
+        ☰
+    </div>
+</header>
+
+ <div class="back-button" onclick="history.back()">🡄Back</div>
+
+<main>
+    <div class="product-page">
+        <div class="product-gallery">
+            <img id="main-hoodie1" src="assets/newhoodieBlackFrontLayDown.png" alt="Hoodie Front">
+            <div id="thumbnail-container" class="thumbnail-container"></div>
+        </div>
+
+        <div class="product-details">
+            <h2>Premium High Quality FENDI1 Hoodie "Couldn't care less"</h2>
+
+            <div class="options">
+                <label for="hoodie-size">Pick size:</label>
+                <select id="hoodie-size">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="3XL">3XL</option>
+                </select>
+            </div>
+
+            <div class="price">49,99 € incl. shipping & VAT</div>
+
+            <div class="product-infos">
+                <h2>-A hoodie made of heavy blended fabric. Made from a soft blend of 50% cotton and 50% polyester.<br>
+                    -Double lined hood with matching Drawstring.<br>
+                    -The Airjet yarn of the fabric ensures a softer feel and less nodule formation.<br>
+                    -Has a pouch pocket on the front and ribbed knit cuffs with elastane content on the sleeves and hem.<br>
+                </h2>
+            </div>
+
+            <div class="size-guide-container">
+                        <button class="size-guide-toggle">Don't know your size? Click here!</button>
+
+                        <div class="size-guide-content">
+                            <img src="/assets/hoodieSize.jpeg" alt="Size Guide" class="size-guide-image">
+
+                            <table class="size-guide-table">
+                                <tr>
+                                    <th>Size</th>
+                                    <th>(A) Length (cm)</th>
+                                    <th>(B) Chest (cm)</th>
+                                    <th>(C) Sleevelength (cm)</th>
+                                </tr>
+                                <tr>
+                                    <td>S</td>
+                                    <td>68.6</td>
+                                    <td>50.8</td>
+                                    <td>85.1</td>
+                                </tr>
+                                <tr>
+                                    <td>M</td>
+                                    <td>71.7</td>
+                                    <td>55.9</td>
+                                    <td>87.6</td>
+                                </tr>
+                                <tr>
+                                    <td>L</td>
+                                    <td>73.7</td>
+                                    <td>61</td>
+                                    <td>90.2</td>
+                                </tr>
+                                <tr>
+                                    <td>XL</td>
+                                    <td>76.2</td>
+                                    <td>66</td>
+                                    <td>92.7</td>
+                                </tr>
+                                <tr>
+                                    <td>XXL</td>
+                                    <td>78.7</td>
+                                    <td>71.1</td>
+                                    <td>95.3</td>
+                                </tr>
+                                <tr>
+                                    <td>3XL</td>
+                                    <td>81.3</td>
+                                    <td>76.2</td>
+                                    <td>97.8</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+            <button class="add-to-cart-btn" >Add to cart</button>
+
+            <div class="terms-container">
+                    <label for="acceptTerms" style="color: #121212;">
+                        <input type="checkbox" id="acceptTerms">
+                        I accept the <a href="legalNotice.html">Terms and Conditions</a>
+                        as well as the
+                        <a href="legalNotice.html">Privacy Policy</a>.
+                    </label>
+                </div>
+
+                <p id="termsWarning" style="display:none; color: red; margin-top:10px;">
+                    Please accept the Terms & Conditions and Privacy Policy before proceeding.
+                </p>
+
+            <div id="paypal-button-container" style="margin-top:1rem;"></div>
+        </div>
+    </div>
+</main>
+
+<footer id="footer">
+        <p>&copy; 2026 FENDI1. ALL RIGHTS RESERVED.</p>
+    </footer>
+    <script>
+        const footer = document.getElementById('footer');
+
+        function checkFooter() {
+            const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollTop = window.scrollY;
+
+            if (scrollTop >= scrollableHeight - 10) {
+                footer.classList.add('show');
+            }   else {
+                footer.classList.remove('show');
+            }
+        }
+
+        window.addEventListener("scroll", checkFooter);
+        window.addEventListener("resize", checkFooter);
+        document.addEventListener("DOMContentLoaded", checkFooter);
+</script>
+     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const burger = document.getElementById("burger");
+            const nav = document.getElementById("header nav");
+
+            burger.addEventListener("click", () => {
+                nav.classList.toggle("show");
+            });
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.size-guide-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+<script src="https://www.paypal.com/sdk/js?client-id=AYnDvZthn_lkeLJIB9ZTt-oa4WGb0CZO7UcAE37tr9_8AjASnQ99WQCdaUydvNyno24UGjNMSjYYNSw-&currency=EUR"></script>
+<script src="ccl-hoodie-cart.js"></script>
+
+</body>
+</html>
