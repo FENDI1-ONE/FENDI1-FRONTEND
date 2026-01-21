@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FENDI1 – CART</title>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- PAYPAL SDK: setze DEINE Client-ID ein -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AYnDvZthn_lkeLJIB9ZTt-oa4WGb0CZO7UcAE37tr9_8AjASnQ99WQCdaUydvNyno24UGjNMSjYYNSw-&currency=EUR"></script>
+</head>
+<body class="cart-page">
+  <header>
+    <div class="logo">FENDI1 CART</div>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="ccl.html">CCL Collection</a>
+      <a href="love&drugs.html">L&D Collection</a>
+      <a href="sticker.html">Stickers</a>
+      <a href="legalNotice.html">Legal Notice</a>
+    </nav>
+    <div class="burger" id="burger">
+      ☰
+    </div>
+  </header>
+
+   <div class="back-button" onclick="history.back()">🡄Back</div>
+
+  <main class="page-min">
+    <div class="cart-wrap" id="cart-page">
+      <h1>Cart</h1>
+
+      <div id="cart-empty" style="display:flex; opacity:.8; margin:18px 0" color: #fff>
+        Your cart is empty. <a href="index.html">Back to Home</a>
+      </div>
+        <div id="order-lookup" style="display:flex; opacity:.8; margin:18px 0" color: #fff>
+          Check your past order here:
+          <input type="text" id="order-id-input" placeholder="Enter your order ID">
+          <button onclick="checkOrderFrontend()">Check Order</button>
+      </div>
+      <div id="order-result"></div>
+    </div>
+
+      <div id="cart-has-items" style="display:none">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Article</th>
+              <th>Details</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Sum</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="cart-items"></tbody>
+        </table>
+
+        <div class="cart-summary">
+          <div>
+            <button class="btn btn-light" onclick="clearCart()">Empty your cart</button>
+            <a class="btn" href="index.html">Continue shopping</a>
+          </div>
+          <div style="font-size:18px;font-weight:800">Total: <span id="cart-total">0,00 €</span></div>
+        </div>
+
+        <div>
+
+           <div class="terms-container">
+                    <label for="acceptTerms">
+                        <input type="checkbox" id="acceptTerms">
+                        I accept the <a href="legalNotice.html">Terms and Conditions</a>
+                        as well as the
+                        <a href="legalNotice.html">Privacy Policy</a>.
+                    </label>
+                </div>
+
+                <p id="termsWarning" style="display:none; color: red; margin-top:10px;">
+                    Please accept the Terms & Conditions and Privacy Policy before proceeding.
+                </p>
+          
+          <div id="paypal-button-container"></div>
+        </div>
+      </div>
+  </main>
+
+  <footer id="footer">
+    <p>&copy; 2026 FENDI1. ALL RIGHTS RESERVED.</p>
+  </footer>
+
+  <script>
+    const footer = document.getElementById('footer');
+
+    function checkFooter(){
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollTop = window.scrollY;
+
+      if (scrollableHeight <= 0 || scrollTop >= scrollableHeight - 10) {
+        footer.classList.add("show");
+      } else {
+        footer.classList.remove("show");
+      }
+    }
+
+    window.addEventListener("scroll", checkFooter);
+    window.addEventListener("resize", checkFooter);
+    document.addEventListener("DOMContentLoaded", checkFooter)
+  </script>
+   <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const burger = document.getElementById("burger");
+            const nav = document.getElementById("header nav");
+
+            burger.addEventListener("click", () => {
+                nav.classList.toggle("show");
+            });
+        });
+    </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
