@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LOVE&DRUGS SHIRT - FENDI1</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background-color: #121212;
+                color: #fff;
+            }
+            header {
+                display: flex;
+                justify-content: space-between;
+                background-color: #000;
+                color: #fff;
+                padding: 20px 40px;
+            }
+            footer {
+                background-color: #000;
+                color: #fff;
+                text-align: center;
+                padding: 1rem;
+            }
+            .product-page {
+                display: flex;
+                justify-content: center;
+                padding: 3rem;
+                gap: 3rem;
+            }
+            .product-gallery {
+                max-width: 400px;
+            }
+            .product-gallery img {
+                width: 100%;
+                border-radius: 10px;
+                margin-bottom: 0.5rem;
+                cursor: pointer;
+                object-fit: cover;
+            }
+            .thumbnail-container {
+                display:flex;
+                gap: 0.5rem;
+            }
+            .thumbnail-container img {
+                width: 60px;
+                height: 60px;
+                border-radius: 5px;
+                border: 2px solid transparent;
+            }
+            .thumbnail-container img.active-thumb {
+                background-color: #000;
+            }
+            .product-details {
+                max-width: 400px;
+            }
+            .product-details h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+            .product-infos {
+                max-width: 400px;
+                font-size: 0.8rem;
+            }
+            .product-infos h2 {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+            .options {
+                margin-bottom: 1rem;
+            }
+            select {
+                padding: 0.5rem;
+                font-size: 1rem;
+            }
+            .price {
+                font-size: 1.5rem;
+                margin: 1rem 0;
+                font-weight: bold;
+            }
+            .button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+                background-color: #000;
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: 0.3s ease;
+            }
+            .button.hover {
+                background-color: #333;
+            }
+        </style>
+    </head>
+    <body class="shirt-page2">
+
+        <header>
+            <div class="logo">LOVE&DRUGS SHIRT</div>
+            <nav id="nav">
+                <a href="index.html">Home</a>
+                <a href="ccl.html">CCL Collection</a>
+                <a href="sticker.html">Sticker</a>
+                <a href="legalNotice.html">Legal Notice</a>
+                <a href="cart.html" class="cart-link">
+                    <div class="cart-wrapper">
+                        <span class="cart-icon">🛒</span>
+                        <span id="cart-count" class="cart-count">0</span>
+                    </div>
+                </a>
+            </nav>
+            <div class="burger" id="burger">
+                ☰
+            </div>
+        </header>
+
+         <div class="back-button" onclick="history.back()">🡄Back</div>
+
+        <main>
+            <div class="product-page">
+                <div class="product-gallery">
+                    <img id="main-shirt" src="assets/love&drugsFront&Back.png" alt="Love&Drugs Shirt Front&Back">
+                    <div id="thumbnail-container" class="thumbnail-container"></div>
+                </div>
+
+                <div class="product-details">
+                    <h2>Premium High Quality FENDI1 Love&Drugs Limited Edition Shirt</h2>
+                
+
+                <div class="options">
+                    <label for="shirt1-size">Pick size</label>
+                    <select id="shirt1-size">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                        <option value="3XL">3XL</option>
+                    </select>
+                </div>
+
+                <div class="price">29,99 € incl. shipping & VAT.</div>
+
+                <div class="product-infos">
+                    <h2>This heavyweight cotton T-shirt is a durable staple with a classic fit. It features a casual style that's perfect for both everyday and casual wear featuring the timeless FENDI1 LOVE&DRUGS "IWEWMNK" design.<br>
+
+                        - Seamless, double-needle collar<br>
+                        - Double-needle sleeve and bottom hems<br>
+                        - 100% cotton<br>
+                        - Taped neck and shoulders for durability<br>
+                    </h2>
+                </div>
+
+                <div class="size-guide-container">
+                        <button class="size-guide-toggle">Don't know your size? Click here!</button>
+
+                        <div class="size-guide-content">
+                            <img src="/assets/shirtSize.jpeg" alt="Size Guide" class="size-guide-image">
+
+                            <table class="size-guide-table">
+                                <tr>
+                                    <th>Size</th>
+                                    <th>(A) Length (cm)</th>
+                                    <th>(B) Chest (cm)</th>
+                                    <th>(C) Sleevelength (cm)</th>
+                                </tr>
+                                <tr>
+                                    <td>S</td>
+                                    <td>71</td>
+                                    <td>45.7</td>
+                                    <td>39.7</td>
+                                </tr>
+                                <tr>
+                                    <td>M</td>
+                                    <td>73.7</td>
+                                    <td>50.8</td>
+                                    <td>43.2</td>
+                                </tr>
+                                <tr>
+                                    <td>L</td>
+                                    <td>76.2</td>
+                                    <td>56</td>
+                                    <td>47</td>
+                                </tr>
+                                <tr>
+                                    <td>XL</td>
+                                    <td>78.7</td>
+                                    <td>61</td>
+                                    <td>50.8</td>
+                                </tr>
+                                <tr>
+                                    <td>XXL</td>
+                                    <td>81.3</td>
+                                    <td>66</td>
+                                    <td>54.6</td>
+                                </tr>
+                                <tr>
+                                    <td>3XL</td>
+                                    <td>83.8</td>
+                                    <td>71</td>
+                                    <td>58</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                <button class="add-to-cart-btn" >Add to cart</button>
+
+                    <div class="terms-container">
+                    <label for="acceptTerms">
+                        <input type="checkbox" id="acceptTerms">
+                        I accept the <a href="legalNotice.html">Terms and Conditions</a>
+                        as well as the
+                        <a href="legalNotice.html">Privacy Policy</a>.
+                    </label>
+                </div>
+
+                <p id="termsWarning" style="display:none; color: red; margin-top:10px;">
+                    Please accept the Terms & Conditions and Privacy Policy before proceeding.
+                </p>
+
+                <div id="paypal-button-container" style="margin-top: 1rem;"></div>
+            </div>
+        </div>
+        </main>
+
+        <footer id="footer">
+            <p>&copy; 2026 FENDI1. ALL RIGHTS RESERVED.</p>
+        </footer>
+        <script>
+            const footer = document.getElementById('footer');
+
+            function checkFooter() {
+                const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollTop = window.scrollY;
+
+                if (scrollableHeight <= 0 || scrollTop >= scrollableHeight - 10) {
+                    footer.classList.add('show');
+                } else {
+                    footer.classList.remove('show');
+                }
+            }
+
+            window.addEventListener("scroll", checkFooter);
+            window.addEventListener("resize", checkFooter);
+            document.addEventListener("DOMContentLoaded", checkFooter);
+        </script>
+         <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const burger = document.getElementById("burger");
+            const nav = document.getElementById("nav");
+
+            burger.addEventListener("click", () => {
+                nav.classList.toggle("show");
+            });
+        });
+    </script>
+        <script>
+        document.querySelectorAll('.size-guide-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+        <script src="https://www.paypal.com/sdk/js?client-id=AYnDvZthn_lkeLJIB9ZTt-oa4WGb0CZO7UcAE37tr9_8AjASnQ99WQCdaUydvNyno24UGjNMSjYYNSw-&currency=EUR"></script>
+        <script src="love&drugs-shirt-cart.js"></script>
+    </body>
+</html>
