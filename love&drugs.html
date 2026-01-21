@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FENDI1 Merch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="lovedrugs-page">
+    <header>
+        <div class="logo">LOVE&DRUGS Collection</div>
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="ccl.html">CCL Collection</a>
+            <a href="sticker.html">Sticker</a>
+            <a href="legalNotice.html">Legal Notice</a>
+            <a href="cart.html" class="cart-link">
+                <div class="cart-wrapper">
+                    <span class="cart-icon">
+                        🛒</span>
+                        <span id="cart-count" class = "cart-count">0</span>
+                </div>
+            </a>
+        </nav>
+        <div class="burger" id="burger">
+            ☰
+        </div>
+    </header>
+
+     <div class="back-button" onclick="history.back()">🡄Back</div>
+
+    <main>
+        <section id="hero">
+            <h1>FENDI1 LOVE&DRUGS "IWEWMNK" Collection</h1>
+            <p>Clean & limited, matching the fan favourite mixtape.</p>
+        </section>
+
+        <section id="shirts" class="product-section">
+            <h2>LOVE&DRUGS "IWEWMNK" Shirt</h2>
+            <a href="love&drugs-shirt.html" class="product-card">
+                <img src="assets/love&drugsFront&Back.png" alt="LOVE&DRUGS Shirt" class="shirts">
+                <h3>FENDI1 Shirt</h3>
+                <p>White shirt with matching color prints to the mixtape</p>
+            </a>
+        </section>
+
+        <section id="hoodies" class="product-section">
+            <h2>LOVE&DRUGS "IWEWMNK" Hoodie</h2>
+            <a href="love&drugs-hoodie.html" class="product-card">
+                <img src="assets/mainPicLovedrugs.png" alt="LOVE&DRUGS Hoodie" class="hoodies">
+                <h3>FENDI1 Hoodie</h3>
+                <p>White hoodie with matching color prints to the mixtape</p>
+            </a>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>&copy; 2026 FENDI1. ALL RIGHTS RESERVED.</p>
+    </footer>
+    <script>
+        const footer = document.getElementById('footer');
+
+        window.addEventListener('scroll',() => {
+            const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollTop = window.scrollY;
+
+            if (scrollTop >= scrollableHeight - 10) {
+                footer.classList.add('show');
+            }   else {
+                footer.classList.remove('show');
+            }
+        });
+    </script>
+     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const burger = document.getElementById("burger");
+            const nav = document.getElementById("header nav");
+
+            burger.addEventListener("click", () => {
+                nav.classList.toggle("show");
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+    <script src="love&drugs-shirt-cart.js"></script>
+</body>
+</html>
