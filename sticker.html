@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticker - FENDI1</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #121212;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            background-color: #000;
+            color: #fff;
+            padding: 20px 40px;
+        }
+
+        footer {
+            background-color: #000;
+            color:#fff;
+            text-align:center;
+            padding: 1rem;
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2rem;
+            padding: 3rem;
+        }
+
+        .product.image {
+            width:300px;
+            height:300px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .product.image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product.image:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-details {
+            max-width: 400px;
+        }
+
+        .product-details h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-details p {
+            margin-bottom: 1rem;
+        }
+
+        .options {
+            margin-bottom: 1rem;
+        }
+
+        select {
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        .back-link {
+            display: block;
+            margin-top:2rem;
+            text-decoration: none;
+            color: #000;
+        }
+    </style>
+</head>
+<body class="sticker-page white-page">
+    <header>
+        <div class="logo">FENDI1 STICKER</div>
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="ccl.html">CCL Collection</a>
+            <a href="love&drugs.html">L&D Collection</a>
+            <a href="legalNotice.html">Legal Notice</a>
+            <a href="cart.html" class="cart-link">
+            <div class="cart-wrapper">
+                <span class="cart-icon">
+                🛒</span>
+                <span id="cart-count" class="cart-count">0</span>
+                
+            </div>
+            </a>
+        </nav>
+        <div class="burger" id="burger">
+            ☰
+        </div>
+        
+    </header>
+
+    <div class="back-button" onclick="history.back()">🡄Back</div>
+
+    <main>
+        <div class="product-container">
+            <div class="product-image">
+                <img src="assets/STICKERshiny.jpeg" alt="Sticker Pack Matt Finish">
+            </div>
+
+            <div class="product-details">
+                <h2>FENDI1 Sticker Pack #1 - Shiny Finish</h2>
+                <p>Minimalistic FENDI1-Design, WhiteOnBlack. Perfect for laptop, mobile phone or walls.<p>
+
+
+                
+                <div class="options">
+                   <label for="quantity">Pick quantity:</label>
+                   <select id="quantity">
+                     <option value="10" data-price="1.99">Pack of 10</option>
+                     <option value ="25" data-price="4.49">Pack of 25</option>
+                     <option value="50" data-price="7.99">Pack of 50</option>
+                     <option value="100" data-price="14.99">Pack of 100</option>
+                   </select>
+                </div>
+
+                <div class="price" id="price-display">from 1,99 € incl. shipping & VAT.</div>
+
+                <button
+                    class="add-to-cart-btn"
+                    data-add-to-cart
+                    data-sku="STICKER PACK #1"
+                    data-name="FENDI1 STICKER PACK #1 SHINY FINISH">
+
+                    Add to cart
+                </button>
+
+                <div class="terms-container">
+                    <label for="acceptTerms" style="color: #121212;">
+                        <input type="checkbox" id="acceptTerms">
+                        I accept the <a href="legalNotice.html">Terms and Conditions</a>
+                        as well as the
+                        <a href="legalNotice.html">Privacy Policy</a>.
+                    </label>
+                </div>
+
+                <p id="termsWarning" style="display:none; color: red; margin-top:10px;">
+                    Please accept the Terms & Conditions and Privacy Policy before proceeding.
+                </p>
+
+                <div id="paypal-button-container" style="margin-top: 1rem;"></div>
+                
+            </div>
+        </div>
+    </main>
+
+        <footer id="footer">
+            <p>© 2026 FENDI1. ALL RIGHTS RESERVED.</p>
+        </footer>
+
+        <script>
+            document.getElementById("paypal-button-container").addEventListener("click", function(event) {
+                const checkbox = document.getElementById("acceptTerms");
+                if (!checkbox.checked) {
+                    event.preventDefault();
+                    alert("Please accept the Terms & Conditions and Privacy Policy before proceeding.");
+                }
+            });
+        </script>
+
+        <script>
+            const quantitySelect = document.getElementById("quantity");
+            const priceDisplay = document.getElementById("price-display");
+
+            function updatePriceText() {
+                const selected = quantitySelect.options[quantitySelect.selectedIndex];
+                const price = selected.getAttribute("data-price");
+                priceDisplay.textContent = `${price} € incl. shipping & VAT`; 
+            }
+
+            quantitySelect.addEventListener("change", updatePriceText);
+
+            updatePriceText();
+        </script>
+        <script>
+        const footer = document.getElementById('footer');
+
+        function checkFooter() {
+            const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollTop = window.scrollY;
+
+            if (scrollTop >= scrollableHeight - 10) {
+                footer.classList.add('show');
+            }   else {
+                footer.classList.remove('show');
+            }
+        }
+
+        window.addEventListener("scroll", checkFooter);
+        window.addEventListener("resize", checkFooter);
+        document.addEventListener("DOMContentLoaded", checkFooter);
+        </script>
+     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const burger = document.getElementById("burger");
+            const nav = document.getElementById("header nav");
+
+            burger.addEventListener("click", () => {
+                nav.classList.toggle("show");
+            });
+        });
+    </script>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=AYnDvZthn_lkeLJIB9ZTt-oa4WGb0CZO7UcAE37tr9_8AjASnQ99WQCdaUydvNyno24UGjNMSjYYNSw-&currency=EUR"></script>
+    <script src="sticker-cart.js"></script>
+    <script>
+    </script>
+</body>
+</html>
+ 
